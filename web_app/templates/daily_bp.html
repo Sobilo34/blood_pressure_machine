@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily BP</title>
+    <link rel="stylesheet" href="../static/styles/styles.css">
+</head>
+<body>
+    <h1>Daily Blood Pressure</h1>
+    <form action="/submit_daily_bp" method="post">
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date">
+        <br>
+        <label for="systolic">Systolic:</label>
+        <input type="number" name="systolic" id="systolic">
+        <br>
+        <label for="diastolic">Diastolic:</label>
+        <input type="number" name="diastolic" id="diastolic">
+        <br>
+        <label for="pulse">Pulse:</label>
+        <input type="number" name="pulse" id="pulse">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
