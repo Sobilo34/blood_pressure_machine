@@ -5,8 +5,11 @@ This is the model for Blood pressure machine
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, TIMESTAMP, Sequence
+from models.base_model import BaseModel
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, scoped_session
 
-engine = create_engine('mysql+mysqldb://bp_user:bp_pwd@localhost/bp_db')
+# engine = create_engine('mysql+mysqldb://bp_user:bp_pwd@localhost/bp_db')
 
 Base = declarative_base()
 
@@ -19,5 +22,4 @@ class BloodPressureReading(BaseModel, Base):
     pulse = Column(Integer, nullable=False)
     reading_time = Column(TIMESTAMP, nullable=False, server_default='CURRENT_TIMESTAMP')
 
-# Create tables
-Base.metadata.create_all(engine)
+    
