@@ -1,8 +1,16 @@
 #!/usr/bin/python3
 """
-Initialize the models package
+initialize the models package
 """
-from models.engine.db_storage import DBStorage
 
-storage = DBStorage()
+from os import getenv
+from dotenv import load_dotenv
+
+load_dotenv()
+
+storage_t = getenv("BP_TYPE_STORAGE")
+
+if storage_t == "db":
+    from models.engine.db_storage import DBStorage
+    storage = DBStorage()
 storage.reload()

@@ -22,4 +22,3 @@ class BloodPressureReading(BaseModel, Base):
     pulse = Column(Integer, nullable=False)
     reading_time = Column(TIMESTAMP, nullable=False, server_default='CURRENT_TIMESTAMP')
 
-    
